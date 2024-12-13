@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Escolha o Jogo</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .game-selection {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: white;
+            z-index: 10;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-selection">
+        <button onclick="loadGame('subway')">Subway Surfers</button>
+        <button onclick="loadGame('leveldevil')">Level Devil</button>
+    </div>
+    <iframe id="gameFrame" src="" style="display: none;"></iframe>
+
+    <script>
+        function loadGame(game) {
+            let iframe = document.getElementById('gameFrame');
+            if (game === 'subway') {
+                iframe.src = 'https://szhong.4399.com/4399swf//upload_swf/ftp38/liuxinyu/20220308/1/index.html';
+            } else if (game === 'leveldevil') {
+                iframe.src = 'https://bitlifeonline.github.io/level-devil/';
+            }
+            iframe.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
